@@ -3844,6 +3844,7 @@
         // API Keys have been removed – they are now stored on the backend.
         
         // DOM Elements
+        // Add this line near the top of your main script
 const API_BASE_URL = 'https://health-ai-backend-w61w.onrender.com';
         const appContainer = document.querySelector('.app-container');
         const mainContent = document.getElementById('mainContent');
@@ -5025,7 +5026,7 @@ const API_BASE_URL = 'https://health-ai-backend-w61w.onrender.com';
             
             try {
                 // Use backend endpoint (no API key here)
-                const response = await fetch(`/api/nutrition/search?q=${encodeURIComponent(query)}`);
+                const response = await fetch(${API_BASE_URL}/api/nutrition/search?q=${encodeURIComponent(query)});
                 
                 if (!response.ok) {
                     throw new Error('Failed to fetch USDA data');
@@ -5225,7 +5226,7 @@ const API_BASE_URL = 'https://health-ai-backend-w61w.onrender.com';
             
             try {
                 // Use backend endpoint
-                const response = await fetch(`/api/air-quality?city=${encodeURIComponent(city)}`);
+                const response = await fetch(${API_BASE_URL}/api/air-quality?city=${encodeURIComponent(city)});
                 
                 if (!response.ok) {
                     throw new Error('City not found');
@@ -5749,7 +5750,7 @@ const API_BASE_URL = 'https://health-ai-backend-w61w.onrender.com';
             
             try {
                 // Use backend endpoint
-                const response = await fetch(`/api/drug/search?q=${encodeURIComponent(query)}`);
+                const response = await fetch(${API_BASE_URL}/api/drug/search?q=${encodeURIComponent(query)});
                 
                 if (!response.ok) {
                     throw new Error('Failed to fetch FDA data');
@@ -5926,7 +5927,7 @@ const API_BASE_URL = 'https://health-ai-backend-w61w.onrender.com';
         // Load health news from backend
         async function loadHealthNews() {
             try {
-                const response = await fetch('/api/news');
+                const response = await fetch(${API_BASE_URL}/api/news);
                 
                 if (!response.ok) {
                     throw new Error('Failed to fetch news');
@@ -5986,7 +5987,7 @@ const API_BASE_URL = 'https://health-ai-backend-w61w.onrender.com';
             }
             
             try {
-                const response = await fetch(`/api/news?q=${encodeURIComponent(query)}`);
+               const response = await fetch(${API_BASE_URL}/api/news?q=${encodeURIComponent(query)});
                 
                 if (!response.ok) {
                     throw new Error('Failed to search news');
